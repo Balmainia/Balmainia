@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="500dp"
-        android:layout_height="150dp"
+        android:layout_width="505dp"
+        android:layout_height="162dp"
         android:gravity="center"
         android:text="Balmainia"
         android:textSize="100dp"
@@ -25,30 +25,28 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="171dp"
-        android:layout_height="106dp"
-        android:layout_marginEnd="204dp"
-        android:layout_marginRight="204dp"
+        android:layout_width="241dp"
+        android:layout_height="158dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
         android:gravity="center"
         android:text="Uitleg"
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.854" />
 
-    <Button_play
-        android:id="@+id/Afspelen"
-        android:layout_width="171dp"
-        android:layout_height="106dp"
-        android:background="@drawable-v24/knop.jpg"
-        android:textSize="32dp"
+    <ImageButton
+        android:layout_width="241dp"
+        android:layout_height="158dp"
+        android:src="@drawable/knop2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.684" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
@@ -77,5 +75,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
