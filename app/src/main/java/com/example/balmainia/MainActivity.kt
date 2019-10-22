@@ -6,19 +6,19 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
 import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-    }
 
-    fun beginSpel(view: View) {
+        imageButton.setOnClickListener {
+            val intent = Intent(this, begin_spel::class.java).apply {
 
-       val intent = Intent(this, begin_spel::class.java).apply {
+            }
+            startActivity(intent)
         }
-        startActivity(intent)
-
     }
 }
