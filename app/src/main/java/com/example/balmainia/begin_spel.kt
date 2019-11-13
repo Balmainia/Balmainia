@@ -19,10 +19,13 @@ class begin_spel : AppCompatActivity() {
         val nummer_verkeerd_antwoord_2 = (0..22).random()
         val nummer_verkeerd_antwoord_3 = (0..22).random()
 
-        button3.setOnClickListener {
-            fun printSum(random_nummer_vraag_1: Int, random_nummer_vraag_2: Int) {
-                println("sum of $random_nummer_vraag_1 and $random_nummer_vraag_2 is ${random_nummer_vraag_1 + random_nummer_vraag_2}")
-            }
+
+
+
+       // button3.setOnClickListener {
+        //    fun sum (){
+        //        println("sum of $random_nummer_vraag_1 and $random_nummer_vraag_2 is $sum")
+        //    }
         }
 
 

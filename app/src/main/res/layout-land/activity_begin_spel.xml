@@ -20,7 +20,7 @@
         android:id="@+id/button3"
         android:layout_width="241dp"
         android:layout_height="158dp"
-        android:text="Button"
+        android:text= "Button"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
