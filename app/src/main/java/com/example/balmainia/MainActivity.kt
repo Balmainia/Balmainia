@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         imageButton.setOnClickListener {
             val intent = Intent(this, begin_spel::class.java).apply {
-
+                begin_spel()
             }
             startActivity(intent)
         }
