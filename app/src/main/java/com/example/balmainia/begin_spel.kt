@@ -12,22 +12,21 @@ class begin_spel : AppCompatActivity() {
 
 
 
-        val random_nummer_vraag_1 = (0..11).random()
-        val random_nummer_vraag_2 = (0..11).random()
+        var random_nummer_vraag_1 = (0..11).random()
+        var random_nummer_vraag_2 = (0..11).random()
 
-        val nummer_verkeerd_antwoord_1 = (0..22).random()
-        val nummer_verkeerd_antwoord_2 = (0..22).random()
-        val nummer_verkeerd_antwoord_3 = (0..22).random()
+        var nummer_verkeerd_antwoord_1 = (0..22).random()
+        var nummer_verkeerd_antwoord_2 = (0..22).random()
+        var nummer_verkeerd_antwoord_3 = (0..22).random()
+
+        var vraag = random_nummer_vraag_1 + random_nummer_vraag_2
 
 
 
 
-       // button3.setOnClickListener {
-        //    fun sum (){
-        //        println("sum of $random_nummer_vraag_1 and $random_nummer_vraag_2 is $sum")
-        //    }
+
+
         }
 
 
-    }
 }
