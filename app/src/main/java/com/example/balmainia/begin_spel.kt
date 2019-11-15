@@ -2,6 +2,7 @@ package com.example.balmainia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_begin_spel.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,23 +32,25 @@ class begin_spel : AppCompatActivity() {
         for(antwoord in antwoorden){
             antwoord.text = Random.nextInt(0, 22).toString()
 
-            antwoorden[random].text = AntwoordVraag.toString()
+            antwoorden[0].text = AntwoordVraag.toString()
+
+            val button = findViewById<Button>(R.id.antwoord1)
+            button.setOnClickListener {
+
+                if (antwoorden ==  antwoord)
+                {
+                    textView3.text = "you did it"
+
+                }
+
+            }
+
         }
-
-        
-
-
-
-
-
-
-
 
 
 
 
 
     }
-
 
 }
