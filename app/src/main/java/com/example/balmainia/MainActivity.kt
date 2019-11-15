@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         imageButton.setOnClickListener {
             val intent = Intent(this, begin_spel::class.java).apply {
                 begin_spel()
