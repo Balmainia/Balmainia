@@ -63,7 +63,7 @@ class begin_spel : AppCompatActivity() {
 
             // Juiste Knop
             goedeAntwoordKnop.setOnClickListener {
-                textView3.text = "$vraag = $AntwoordVraag"
+                textView3.text = "Pepernoot"
             }
         }
     }
