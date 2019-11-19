@@ -3,27 +3,21 @@ package com.example.balmainia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_begin_spel.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 import kotlin.random.Random
-import android.os.CountDownTimer
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import kotlinx.android.synthetic.main.activity_einde_spel.*
-
 
 class begin_spel : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_begin_spel)
-
-
-
 
         object : CountDownTimer( 120000, 1000) {
 
@@ -39,6 +33,11 @@ class begin_spel : AppCompatActivity() {
             }
         }.start()
 
+        onCreate()
+
+    }
+
+    private fun onCreate() {
         var RandomNummerVraag1 = (0..11).random()
         var RandomNummerVraag2 = (0..11).random()
         var random = (0..3).random()
@@ -63,8 +62,17 @@ class begin_spel : AppCompatActivity() {
 
             // Juiste Knop
             goedeAntwoordKnop.setOnClickListener {
-                textView3.text = "Pepernoot"
+                textView3.text = "$vraag $AntwoordVraag"
+
+                Handler().postDelayed(
+                    {
+                        onCreate()
+                    },
+                    1500 // value in milliseconds
+                )
             }
         }
+
     }
+
 }
