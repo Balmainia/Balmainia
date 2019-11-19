@@ -1,5 +1,6 @@
 package com.example.balmainia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,6 +8,13 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_begin_spel.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
+import android.os.CountDownTimer
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import kotlinx.android.synthetic.main.activity_einde_spel.*
+
 
 class begin_spel : AppCompatActivity() {
 
@@ -14,6 +22,22 @@ class begin_spel : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_begin_spel)
 
+
+
+
+        object : CountDownTimer( 120000, 1000) {
+
+            override fun onTick(millisUntilFinished: Long) {
+                timer.setText("" + millisUntilFinished / 1000)
+            }
+
+            override fun onFinish() {
+                val intent = Intent(this@begin_spel,Einde_spel::class.java)
+                startActivity(intent)
+
+
+            }
+        }.start()
 
         var RandomNummerVraag1 = (0..11).random()
         var RandomNummerVraag2 = (0..11).random()
@@ -30,17 +54,16 @@ class begin_spel : AppCompatActivity() {
 
         textView3.text = vraag
         for(antwoord in antwoorden){
+            // Geeft alle id uit de list antwoorden een random antwoord
             antwoord.text = Random.nextInt(0, 22).toString()
+            // Geeft een random antwoord id uit de list antwoorden het juiste antwoord
+            var goedeAntwoordKnop = antwoorden[random]
+            goedeAntwoordKnop.text = AntwoordVraag.toString()
+            println(goedeAntwoordKnop)
 
-            antwoorden[0].text = AntwoordVraag.toString()
-
-            val button = findViewById<Button>(R.id.antwoord1)
-            button.setOnClickListener {
-
-             //if (antwoord.text.)
-                {
-                    textView3.text = "you did it"
-                }
+            // Juiste Knop
+            goedeAntwoordKnop.setOnClickListener {
+                textView3.text = "$vraag = $AntwoordVraag"
             }
         }
     }
