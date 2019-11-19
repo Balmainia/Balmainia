@@ -37,20 +37,11 @@ class begin_spel : AppCompatActivity() {
             val button = findViewById<Button>(R.id.antwoord1)
             button.setOnClickListener {
 
-                if (antwoorden ==  antwoord)
+             //if (antwoord.text.)
                 {
                     textView3.text = "you did it"
-
                 }
-
             }
-
         }
-
-
-
-
-
     }
-
 }
