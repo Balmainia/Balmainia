@@ -11,14 +11,15 @@
         android:layout_width="400dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
-        android:text="Einde"
-        android:textSize="75dp"
         android:gravity="center"
+        android:text="Einde"
+        android:textSize="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -33,5 +34,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="640dp" />
+
+    <TextView
+        android:id="@+id/nogEenKeer"
+        android:layout_width="400dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:text="Nog een keer spelen"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.503" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

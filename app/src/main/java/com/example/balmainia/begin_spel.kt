@@ -1,6 +1,7 @@
 package com.example.balmainia
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -19,25 +20,24 @@ class begin_spel : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_begin_spel)
 
-        object : CountDownTimer( 120000, 1000) {
+
+
+        object : CountDownTimer( 3000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
                 timer.setText("" + millisUntilFinished / 1000)
             }
-
             override fun onFinish() {
                 val intent = Intent(this@begin_spel,Einde_spel::class.java)
                 startActivity(intent)
-
-
             }
         }.start()
-
         onCreate()
-
     }
 
-    private fun onCreate() {
+   var punten = 0
+
+ fun onCreate() {
         var RandomNummerVraag1 = (0..11).random()
         var RandomNummerVraag2 = (0..11).random()
         var random = (0..3).random()
@@ -45,6 +45,7 @@ class begin_spel : AppCompatActivity() {
 
         var vraag = ("$RandomNummerVraag1 + $RandomNummerVraag2 = ")
         var AntwoordVraag = RandomNummerVraag1 + RandomNummerVraag2
+        achtergrondSpel.setBackgroundColor(Color.parseColor("#a8a8a8"))
 
 
         val randomAnswers = List(3) { Random.nextInt(0, 22) }
@@ -63,7 +64,9 @@ class begin_spel : AppCompatActivity() {
             // Juiste Knop
             goedeAntwoordKnop.setOnClickListener {
                 textView3.text = "$vraag $AntwoordVraag"
-
+                punten = punten + 10
+                puntenTelling.text = punten.toString()
+                achtergrondSpel.setBackgroundColor(Color.parseColor("#D8FCA8"))
                 Handler().postDelayed(
                     {
                         onCreate()
