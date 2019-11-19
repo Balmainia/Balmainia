@@ -1,6 +1,7 @@
 package com.example.balmainia
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -35,6 +36,7 @@ class begin_spel : AppCompatActivity() {
 
         onCreate()
 
+
     }
 
     private fun onCreate() {
@@ -50,7 +52,7 @@ class begin_spel : AppCompatActivity() {
         val randomAnswers = List(3) { Random.nextInt(0, 22) }
         val antwoorden = arrayOf(antwoord1, antwoord2, antwoord3, antwoord4)
 
-
+        achtergrondSpel.setBackgroundColor(Color.parseColor("#a8a8a8"))
         textView3.text = vraag
         for(antwoord in antwoorden){
             // Geeft alle id uit de list antwoorden een random antwoord
@@ -63,6 +65,9 @@ class begin_spel : AppCompatActivity() {
             // Juiste Knop
             goedeAntwoordKnop.setOnClickListener {
                 textView3.text = "$vraag $AntwoordVraag"
+                achtergrondSpel.setBackgroundColor(Color.parseColor("#D8FCA8"))
+
+
 
                 Handler().postDelayed(
                     {
