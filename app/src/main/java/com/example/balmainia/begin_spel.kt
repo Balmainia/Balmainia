@@ -22,7 +22,7 @@ class begin_spel : AppCompatActivity() {
 
 
 
-        object : CountDownTimer( 3000, 1000) {
+        object : CountDownTimer( 120000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
                 timer.setText("" + millisUntilFinished / 1000)
@@ -58,6 +58,15 @@ class begin_spel : AppCompatActivity() {
             antwoord.text = Random.nextInt(0, 22).toString()
             // Geeft een random antwoord id uit de list antwoorden het juiste antwoord
             var goedeAntwoordKnop = antwoorden[random]
+            antwoord.setOnClickListener {
+                achtergrondSpel.setBackgroundColor(Color.parseColor("#FF0000"))
+                Handler().postDelayed(
+                    {
+                        achtergrondSpel.setBackgroundColor(Color.parseColor("#a8a8a8"))
+                    },
+                    1500 // value in milliseconds
+                )
+            }
             goedeAntwoordKnop.text = AntwoordVraag.toString()
             println(goedeAntwoordKnop)
 
@@ -66,13 +75,15 @@ class begin_spel : AppCompatActivity() {
                 textView3.text = "$vraag $AntwoordVraag"
                 punten = punten + 10
                 puntenTelling.text = punten.toString()
-                achtergrondSpel.setBackgroundColor(Color.parseColor("#D8FCA8"))
+                achtergrondSpel.setBackgroundColor(Color.parseColor("#228B22"))
                 Handler().postDelayed(
                     {
                         onCreate()
                     },
                     1500 // value in milliseconds
+
                 )
+
             }
         }
 
